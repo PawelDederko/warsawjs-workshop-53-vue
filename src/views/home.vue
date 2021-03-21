@@ -1,8 +1,8 @@
 <template>
   <h1>🌍 World Records 🌏</h1>
-  <input type="text" v-model="filterInput" name="" id="">
+  <input type="text" v-model="filterInput" name="" id="" placeholder="Search...">
   <ul v-if="countryList.length" class="country-list">
-    <li v-for="el in filteredList" v-bind:key="el">
+    <li v-for="el in filteredList" v-bind:key="el" class="country">
         <RouterLink v-bind:to="getCountryCode(el.href)">{{el.name}}</RouterLink>
     </li>
   </ul>
@@ -40,5 +40,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .country-list {list-style-type: none};
+    .country-list {list-style-type: none;}
+    .country {margin: 10px; display: inline-block;}
 </style>
